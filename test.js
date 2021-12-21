@@ -8,7 +8,7 @@ const {
   errorHandler
 } = require("./acquire_semaphore");
 
-const { client } = require('./redis');
+const { client } = require('./redis.js');
 
 
 const count = 100;

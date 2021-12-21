@@ -1,0 +1,39 @@
+{
+  "name": "redis-locks",
+  "version": "1.0.0",
+  "description": "redis-locks",
+  "main": "test.js",
+  "scripts": {
+    "test": "node test.js",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/explorerNW/redis-locks.git"
+  },
+  "keywords": [
+    "redis"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "author": "explorerNW <superexplorernw@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/explorerNW/redis-locks/issues"
+  },
+  "homepage": "https://github.com/explorerNW/redis-locks#readme",
+  "dependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@types/redis": "^4.0.11",
+    "redis": "^3.0.2",
+    "redis-commands": "^1.7.0",
+    "redis-errors": "^1.2.0",
+    "redis-parser": "^3.0.0"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "uuid": "^8.3.2"
+  }
+}

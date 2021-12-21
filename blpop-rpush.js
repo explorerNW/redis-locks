@@ -1,4 +1,4 @@
-const { client } = require("./redis");
+const { client } = require("./redis.js");
 
 const errorHandler = (error) => {
     if (error) {

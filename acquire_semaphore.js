@@ -1,4 +1,4 @@
-const { client, uuid } = require("./redis");
+const { client, uuid } = require("./redis.js");
 
 function timer(delay, callback) {
   let tick = setTimeout(() => {
