@@ -1,19 +1,16 @@
-const {
-  acquireSemaphore,
-  releaseSemaphore,
-  countingSemaphore,
-  releaseCountingSemaphore,
-  countingFairSemaphore,
-  releaseFairSemaphore,
-  errorHandler
-} = require("./acquire_semaphore");
+const { acquireSemaphore, releaseSemaphore } = require("./acquire_semaphore");
 
-const { client } = require('./redis');
+const { countingSemaphore, releaseCountingSemaphore } = require('./countingSemaphore');
+
+const { countingFairSemaphore, releaseFairSemaphore } = require('./countingFairSemaphore');
+
+const { client } = require('./redis.js');
+const { errorHandler } = require('./utils');
 
 
 const count = 100;
 const start = Date.now();
-const operatoinCost = 10 || Math.random()*10000;
+const operatoinCost = 10 || Math.random() * 10000;
 
 let quit = 0;
 function test() {
@@ -30,7 +27,7 @@ function test() {
         }, operatoinCost);
       }
       if (quit === count) {
-        console.log('acquireSemaphore: %s s', (Date.now() - start)/1000); 
+        console.log('acquireSemaphore: %s s', (Date.now() - start) / 1000);
       }
     })
     .catch(err => {
@@ -53,7 +50,7 @@ for (let i = 0; i < count; i++) {
           releaseFairSemaphore("test3", data);
           if (response0 % count === 0) {
             client.set('lock:test3:counter', '0');
-            console.log('countingFairSemaphore: %s s', (Date.now() - start)/1000); 
+            console.log('countingFairSemaphore: %s s', (Date.now() - start) / 1000);
           }
         });
       }, operatoinCost);
@@ -67,7 +64,7 @@ for (let i = 0; i < count; i++) {
           console.log(`CS:${response0}`);
           releaseCountingSemaphore("test1", data);
           if (response0 % count === 0) {
-            console.log('countingSemaphore: %s s', (Date.now() - start)/1000); 
+            console.log('countingSemaphore: %s s', (Date.now() - start) / 1000);
           }
         });
       }, operatoinCost);
