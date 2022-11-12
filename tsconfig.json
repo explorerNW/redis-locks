@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "module": "CommonJS",
+    "lib": [
+      "dom",
+      "es2018",
+      "esnext"
+    ],
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "target": "es5",
+    "allowJs": true,
+    "outDir": "./build"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ]
+}

@@ -4,4 +4,6 @@
 
 yarn lint
 
+yarn build
+
 yarn audit
