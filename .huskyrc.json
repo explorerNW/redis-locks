@@ -1,6 +1,7 @@
 {
   "hooks": {
     "pre-commit": "yarn lint",
-    "commit-msg": "yarn commitlint -e $HUSKY_GIT_PARAMS --config ./tools/commit-lint-config.js"
+    "commit-msg": "yarn commitlint -e $HUSKY_GIT_PARAMS --config ./tools/commit-lint-config.js",
+    "pre-push": "yarn lint && yarn build && yarn audit"
   }
 }

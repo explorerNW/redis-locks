@@ -1,12 +1,16 @@
 {
-  "name": "redis-locks",
+  "name": "my-webpack-project",
   "version": "1.0.0",
-  "description": "redis-locks",
+  "description": "My webpack project",
   "main": "test.js",
   "scripts": {
     "test": "node test.js",
     "lint": "eslint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "rd /Q /S dist && webpack --mode=production --node-env=production --stats-error-details",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch"
   },
   "repository": "git+https://github.com/explorerNW/redis-locks.git",
   "keywords": [
@@ -25,19 +29,34 @@
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@types/redis": "^4.0.11",
-    "redis": "^3.0.2",
+    "crypto-browserify": "^3.12.0",
+    "ioredis": "^5.2.4",
+    "redis": "^4.5.0",
     "redis-commands": "^1.7.0",
     "redis-errors": "^1.2.0",
-    "redis-parser": "^3.0.0"
+    "redis-parser": "^3.0.0",
+    "rxjs": "^7.5.7",
+    "stream-browserify": "^3.0.0",
+    "url": "^0.11.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@loadable/babel-plugin": "^5.13.2",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
+    "@webpack-cli/generators": "^2.5.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.1.0",
     "eslint": "^8.27.0",
+    "eslint-loader": "^4.0.2",
     "husky": "^8.0.2",
     "pinst": "^3.0.0",
-    "rxjs": "^7.5.7",
-    "uuid": "^8.3.2"
+    "prettier": "^2.7.1",
+    "ts-loader": "^9.4.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-node-externals": "^3.0.0"
   }
 }

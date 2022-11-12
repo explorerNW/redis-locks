@@ -1,5 +1,5 @@
 const client = require("redis").createClient({
-    password: "foobared"
+    password: "www.niewang.com"
 });
 const batch = client.batch();
 
