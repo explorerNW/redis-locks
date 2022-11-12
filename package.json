@@ -5,17 +5,15 @@
   "main": "test.js",
   "scripts": {
     "test": "node test.js",
+    "lint": "eslint",
     "prepare": "husky install"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/explorerNW/redis-locks.git"
-  },
+  "repository": "git+https://github.com/explorerNW/redis-locks.git",
   "keywords": [
     "redis"
   ],
   "engines": {
-    "node": ">=6"
+    "node": ">=12"
   },
   "author": "explorerNW <superexplorernw@163.com>",
   "license": "MIT",
@@ -33,7 +31,13 @@
     "redis-parser": "^3.0.0"
   },
   "devDependencies": {
-    "husky": "^7.0.4",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
+    "husky": "^8.0.2",
+    "pinst": "^3.0.0",
+    "rxjs": "^7.5.7",
     "uuid": "^8.3.2"
   }
 }
