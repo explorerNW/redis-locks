@@ -2,6 +2,7 @@
 
 const path = require("path");
 const nodeExternals = require('webpack-node-externals');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == "production";
 const resolve = (relativePath) => path.resolve(__dirname, relativePath);
@@ -13,8 +14,7 @@ const config = {
     filename: "[name].js",
   },
   plugins: [
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    new ESLintPlugin()
   ],
   target: "node",
   module: {
@@ -34,10 +34,7 @@ const config = {
             options: {
               transpileOnly: true,
             },
-          },
-          // {
-          //   loader: "eslint-loader"
-          // }
+          }
         ],
         include: [resolve("./src")],
       },
