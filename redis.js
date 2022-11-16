@@ -1,12 +1,11 @@
-const client = require("redis").createClient({
+const Redis = require("ioredis");
+const client = new Redis({
     password: "www.niewang.com"
 });
-const batch = client.batch();
 
 const uuid = require("uuid");
 
 module.exports = {
     client,
-    uuid,
-    batch
+    uuid
 };
