@@ -10,7 +10,7 @@ const errorHandler = (error) => {
 async function blpop(name, timeout=60){
     console.log('start receive message');
     try {
-        const data =  client.blPop(name, timeout);
+        const data =  client.blpop(name, timeout);
         if (data) {
             console.log('message: ' + data[1]);
             blpop(name);

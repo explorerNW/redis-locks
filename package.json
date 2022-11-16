@@ -7,7 +7,7 @@
     "test": "node test.js",
     "lint": "eslint",
     "prepare": "husky install",
-    "build": "rd /Q /S dist && webpack --mode=production --node-env=production --stats-error-details",
+    "build": "webpack --mode=production --node-env=production --stats-error-details",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch"

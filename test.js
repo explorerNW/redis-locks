@@ -28,6 +28,7 @@ function test() {
       }
       if (quit === count) {
         console.log('acquireSemaphore: %s s', (Date.now() - start) / 1000);
+        process.exit();
       }
     })
     .catch(err => {
