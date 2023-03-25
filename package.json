@@ -45,7 +45,7 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
-    "@webpack-cli/generators": "^2.5.0",
+    "@webpack-cli/generators": "^3.0.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^9.1.0",
     "eslint": "^8.27.0",
